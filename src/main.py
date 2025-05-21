@@ -32,7 +32,8 @@ def run_pipeline(tickers=None):
         data_collection.save_stock_data(ticker, stock_data)
         
         # Get news
-        news = data_collection.get_yahoo_finance_news(ticker)
+
+        news = data_collection.get_financial_news(ticker)
         all_news.extend(news)
         
         # Be nice to servers
