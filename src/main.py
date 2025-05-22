@@ -14,7 +14,7 @@ import visualization
 def run_pipeline(tickers=None):
     """Run the complete sentiment analysis pipeline"""
     if tickers is None:
-        tickers = ['AAPL', 'MSFT', 'GOOGL', 'AMZN', 'TSLA', 'NVDA']
+        tickers = ['AAPL', 'MSFT', 'GOOGL', 'AMZN', 'TSLA', 'NVDA', 'META']
     
     print("=" * 50)
     print(f"Financial Sentiment Analysis - {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")

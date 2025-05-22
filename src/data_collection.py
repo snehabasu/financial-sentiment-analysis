@@ -6,6 +6,13 @@ import time
 from datetime import datetime, timedelta
 import os
 
+try:
+    from config import MARKETAUX_API_KEY
+except ImportError:
+    # Fallback if config.py doesn't exist
+    MARKETAUX_API_KEY = "demo"
+    print("Warning: config.py not found. Using demo API key for MarketAux.")
+
 # Make sure data directory exists
 os.makedirs('data', exist_ok=True)
 
@@ -96,7 +103,7 @@ def get_yahoo_finance_news(ticker, max_articles=5):
         return []
     
 
-def get_marketaux_news(ticker, api_key="demo", max_articles=5):
+def get_marketaux_news(ticker, api_key=MARKETAUX_API_KEY, max_articles=5):
     """Get news from MarketAux API (free tier available)"""
     url = f"https://api.marketaux.com/v1/news/all?symbols={ticker}&language=en&api_token={api_key}"
     
@@ -163,7 +170,7 @@ def save_news_data(news_data):
 
 def main():
     # List of tickers to analyze
-    tickers = ['AAPL', 'MSFT', 'GOOGL', 'AMZN', 'TSLA', 'NVDA']
+    tickers = ['AAPL', 'MSFT', 'GOOGL', 'AMZN', 'TSLA', 'NVDA', 'META']
     
     all_news = []
     

@@ -19,6 +19,7 @@ lib64/
 parts/
 sdist/
 var/
+src/config.py
 wheels/
 *.egg-info/
 .installed.cfg

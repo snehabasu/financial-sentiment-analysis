@@ -50,7 +50,7 @@ def analyze_new_ticker(ticker):
     data_collection.save_stock_data(ticker, stock_data)
     
     # Get news
-    news = data_collection.get_yahoo_finance_news(ticker, max_articles=10)
+    news = data_collection.get_financial_news(ticker, max_articles=10)
     
     if not news:
         st.error(f"No news found for {ticker}")
