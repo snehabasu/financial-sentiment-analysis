@@ -33,7 +33,7 @@ def run_pipeline(tickers=None):
         
         # Get news
 
-        news = data_collection.get_financial_news(ticker)
+        news = data_collection.get_financial_news_fast(ticker)
         all_news.extend(news)
         
         # Be nice to servers

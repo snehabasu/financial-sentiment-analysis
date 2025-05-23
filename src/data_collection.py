@@ -4,12 +4,19 @@ import requests
 import time
 from datetime import datetime, timedelta
 import os
+import sys
 
-# API Configuration - Add your API keys here
+# API Configuration - Fix the import path issue
 try:
+    # Add the script's directory to Python path so it can find config.py
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    if script_dir not in sys.path:
+        sys.path.insert(0, script_dir)
+    
     from config import MARKETAUX_API_KEY, FINNHUB_API_KEY, EODHD_API_KEY
+    print("✓ Loaded API keys from config.py")
 except ImportError:
-    # Fallback if config.py doesn't exist
+    # Fallback if config.py doesn't exist or can't be imported
     MARKETAUX_API_KEY = os.getenv('MARKETAUX_API_KEY', 'demo')
     FINNHUB_API_KEY = os.getenv('FINNHUB_API_KEY', '')
     EODHD_API_KEY = os.getenv('EODHD_API_KEY', '')
