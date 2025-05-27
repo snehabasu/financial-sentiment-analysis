@@ -6,7 +6,7 @@ import time
 import json
 
 class SentimentAnalyzer:
-    def __init__(self, api_key=None, model="gpt-3.5-turbo"):
+    def __init__(self, api_key=None, model="gpt-4.1"):
         """Initialize the sentiment analyzer with OpenAI API"""
         self.client = OpenAI(api_key=api_key or os.getenv('OPENAI_API_KEY'))
         self.model = model

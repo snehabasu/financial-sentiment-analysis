@@ -1,5 +1,6 @@
 # Python environments
 venv/
+venv_fast/
 env_py38/
 .env
 *.pyc
